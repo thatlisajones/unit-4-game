@@ -1,7 +1,7 @@
 $( document ).ready(function(){
     
     // Generate a random number to guess
-    var Random=Math.floor(Math.random()*50+19)
+    var Random=Math.floor(Math.random()*120+19)
     
     // Display random number
     $('#scoreToMatch').text(Random);
@@ -21,7 +21,7 @@ $( document ).ready(function(){
   $('#losses').text(losses);
    // Reset game
   function reset(){
-        Random=Math.floor(Math.random()*50+19);
+        Random=Math.floor(Math.random()*120+19);
         console.log(Random)
         $('#scoreToMatch').text(Random);
         num1= Math.floor(Math.random()*12+1);
@@ -33,7 +33,7 @@ $( document ).ready(function(){
         } 
   // Display wins
   function victory(){
-  alert("You won!");
+  alert("Winner! Winner!");
     wins++; 
     $('#wins').text(wins);
     reset();
