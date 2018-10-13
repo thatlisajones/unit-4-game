@@ -1,10 +1,10 @@
 $( document ).ready(function(){
     
     // Generate a random number to guess
-    var Random=Math.floor(Math.random()*120+19)
+    var Random=Math.floor(Math.random()*101+19)
     
     // Display random number
-    $('#scoreToMatch').text(Random);
+    $("#scoreToMatch").text(Random);
     
     //Generate random number for each crystal
     var num1= Math.floor(Math.random()*12+1)
@@ -17,40 +17,40 @@ $( document ).ready(function(){
     var wins= 0;
     var losses = 0;
     
-   $('#wins').text(wins);
-  $('#losses').text(losses);
+   $("#wins").text(wins);
+  $("#losses").text(losses);
    // Reset game
   function reset(){
-        Random=Math.floor(Math.random()*120+19);
+        Random=Math.floor(Math.random()*101+19);
         console.log(Random)
-        $('#scoreToMatch').text(Random);
+        $("#scoreToMatch").text(Random);
         num1= Math.floor(Math.random()*12+1);
         num2= Math.floor(Math.random()*12+1);
         num3= Math.floor(Math.random()*12+1);
         num4= Math.floor(Math.random()*12+1);
         playerTotal= 0;
-        $('#totalScore').text(playerTotal);
+        $("#totalScore").text(playerTotal);
         } 
   // Display wins
   function victory(){
-  alert("Winner! Winner!");
+  //alert("Winner! Winner!");
     wins++; 
-    $('#wins').text(wins);
+    $("#wins").text(wins);
     reset();
   }
   // Display losses
   function loser(){
-  alert ("Better luck next time.");
+  //alert ("Better luck next time.");
     losses++;
-    $('#losses').text(losses);
+    $("#losses").text(losses);
     reset()
   }
-  // Clicking crystals
-    $('.azure').on ('click', function(){
+  // Crystal on click definitions
+    $(".azure").on ("click", function(){
       playerTotal = playerTotal + num1;
-      console.log("New playerTotal= " + playerTotal);
-      $('#totalScore').text(playerTotal); 
-            //Win & lose conditions
+      //console.log("New playerTotal= " + playerTotal);
+      $("#totalScore").text(playerTotal); 
+            //Win or lose conditions
           if (playerTotal == Random){
             victory();
           }
@@ -58,10 +58,10 @@ $( document ).ready(function(){
             loser();
           }   
     })  
-    $('.red').on ('click', function(){
+    $(".red").on ("click", function(){
       playerTotal = playerTotal + num2;
-      console.log("New playerTotal= " + playerTotal);
-      $('#totalScore').text(playerTotal); 
+      //console.log("New playerTotal= " + playerTotal);
+      $("#totalScore").text(playerTotal); 
           if (playerTotal == Random){
             victory();
           }
@@ -69,10 +69,10 @@ $( document ).ready(function(){
             loser();
           } 
     })  
-    $('.green').on ('click', function(){
+    $(".green").on ("click", function(){
       playerTotal = playerTotal + num3;
-      console.log("New playerTotal= " + playerTotal);
-      $('#totalScore').text(playerTotal);
+      //console.log("New playerTotal= " + playerTotal);
+      $("#totalScore").text(playerTotal);
              if (playerTotal == Random){
             victory();
           }
@@ -80,10 +80,10 @@ $( document ).ready(function(){
             loser();
           } 
     })  
-    $('.diamond').on ('click', function(){
+    $(".diamond").on ("click", function(){
       playerTotal = playerTotal + num4;
-      console.log("New playerTotal= " + playerTotal);
-      $('#totalScore').text(playerTotal); 
+      //console.log("New playerTotal= " + playerTotal);
+      $("#totalScore").text(playerTotal); 
         
             if (playerTotal == Random){
             victory();
