@@ -33,14 +33,14 @@ $( document ).ready(function(){
         } 
   // Display wins
   function victory(){
-  //alert("Winner! Winner!");
+    $("#win-loss-img").html("<img src='assets/images/green-check.jpg' />");
     wins++; 
     $("#wins").text(wins);
     reset();
   }
   // Display losses
   function loser(){
-  //alert ("Better luck next time.");
+    $("#win-loss-img").html("<img src='assets/images/redx.jpg' />");
     losses++;
     $("#losses").text(losses);
     reset()
